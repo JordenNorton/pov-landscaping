@@ -2,13 +2,14 @@
     <div class="header" :style="{ backgroundImage: `url(${backgroundImage})` }">
         <div class="overlay">
             <img :src="logo" alt="Logo" class="logo">
-            <div>
-                <v-btn rounded="xl" color="green-darken-4" class="mx-3 text-white">
+            <div class="py-1">
+                <v-btn rounded="xl" class="mx-3 text-white custom-gradient" dark>
                     Portfolio
                 </v-btn>
-                <v-btn rounded="xl" color="green-darken-4" class="mx-3 text-white">
-                    <p class="text-button-colour">Get a Quote</p>
+                <v-btn rounded="xl" class="mx-3 text-white custom-gradient" dark>
+                    Get a Quote
                 </v-btn>
+            
             </div>
         </div>
     </div>
@@ -47,10 +48,35 @@ export default {
 
 .logo {
     max-width: 500px; /* Adjust based on your logo's size */
-    //margin-bottom: 5%;
     margin-bottom: 60px;
+    animation: logo-appear 0.5s ease-out forwards;
+    opacity: 0; /* Initial state for animation */
+    transform: scale(0.95); /* Initial scale */
     
 }
+
+@keyframes logo-appear {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.custom-gradient {
+    background: rgb(102,187,106);
+    background: linear-gradient(135deg, rgba(102,187,106,1) 0%, rgba(67,160,71,1) 100%);
+    border: none; /* Remove any default borders */
+    color: white; /* Ensure text color is white for high contrast */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for effects */
+}
+
+.custom-gradient:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+
 
 @media (max-width: 768px) {
     .logo {
