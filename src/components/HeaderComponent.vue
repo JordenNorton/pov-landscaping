@@ -6,7 +6,7 @@
                 <v-btn rounded="xl" class="mx-3 text-white custom-gradient" dark>
                     Portfolio
                 </v-btn>
-                <v-btn rounded="xl" class="mx-3 text-white custom-gradient" dark>
+                <v-btn rounded="xl" class="mx-3 text-white custom-gradient-cta" dark>
                     Get a Quote
                 </v-btn>
             
@@ -75,12 +75,16 @@ export default {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
     transform: translateY(-2px); /* Slight lift effect on hover */
 }
+.custom-gradient-cta {
+    background: rgb(203,185,55);
+    background: linear-gradient(90deg, rgba(203,185,55,1) 0%, rgba(209,146,9,1) 100%);
+}
 
 
 
 @media (max-width: 768px) {
     .logo {
-        max-width: 400px;
+        max-width: 200px;
         margin-bottom: 50px;
     }
 }
