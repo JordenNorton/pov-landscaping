@@ -52,7 +52,6 @@ export default {
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    //color: #A6CF98;
 }
 
 .page-about {
