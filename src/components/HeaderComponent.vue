@@ -75,11 +75,16 @@ export default {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
     transform: translateY(-2px); /* Slight lift effect on hover */
 }
+
 .custom-gradient-cta {
     background: rgb(203,185,55);
     background: linear-gradient(90deg, rgba(203,185,55,1) 0%, rgba(209,146,9,1) 100%);
 }
 
+.custom-gradient-cta:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
 
 
 @media (max-width: 768px) {
