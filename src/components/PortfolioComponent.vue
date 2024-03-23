@@ -2,12 +2,12 @@
     <section class="py-5 portfolio-container">
         <v-container>
             <v-row justify="center" class="mb-5">
-                <v-col cols="6" class="portfolio-header">
+                <v-col cols="12" lg="6" xl="3" class="portfolio-header">
                     <h2 class="portfolio-header-text">Our Work</h2>
                 </v-col>
             </v-row>
             <v-row justify="center">
-                <v-col cols="12" md="10" class="mt-4 carousel-container">
+                <v-col cols="12" md="10" lg="8" xl="4" class="mt-4 carousel-container">
                     <v-carousel class="mt-2 custom-carousel" hide-delimiter-background cycle interval="5000">
                         <v-carousel-item
                             v-for="(image, index) in images"

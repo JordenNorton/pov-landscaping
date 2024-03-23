@@ -2,7 +2,7 @@
     <section class="about-container">
         <v-container>
             <v-row justify="center">
-                <v-col cols="12" md="10">
+                <v-col cols="12" md="10" lg="9" xl="6">
                     <div class="page-header">
                         <h2 class="pt-5 about-header-text">Transforming Your Outdoor Spaces</h2>
                         <!-- <p>discover the potential with our landscaping services</p> -->
