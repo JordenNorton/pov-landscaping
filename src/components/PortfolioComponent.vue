@@ -30,9 +30,13 @@
                 <v-col cols="12" class="socials">
                     <h2 class="socials-text">Want to see more?</h2>
                     <p class="socials-text-sub">Follow Us!</p>
-                    <div class="social-icons">
-                        <i class="mdi mdi-facebook"></i>
-                        <i class="mdi mdi-instagram"></i>
+                    <div class="social-icons mt-3">
+                        <v-btn icon :href="facebookUrl" target="_blank" class="social-icon mr-5">
+                            <v-icon x-large>mdi-facebook</v-icon>
+                        </v-btn>
+                        <v-btn icon :href="instagramUrl" target="_blank" class="social-icon">
+                            <v-icon x-large>mdi-instagram</v-icon>
+                        </v-btn>
                     </div>
                 </v-col>
             </v-row>
@@ -56,7 +60,9 @@ export default {
                 {src: this.portfolioTwo, title: "Project 2"},
                 {src: this.portfolioThree, title: "Project 3"},
                 {src: this.portfolioFour, title: "Project 4"}
-            ]
+            ],
+            facebookUrl: "https://www.facebook.com/profile.php?id=61557010003110",
+            instagramUrl: "https://www.instagram.com/pov_landscape_ltd/"
         };
     }
 };
