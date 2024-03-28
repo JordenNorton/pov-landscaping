@@ -6,6 +6,7 @@
         />
         <!-- Main Content Section -->
         <AboutComponent/>
+        <ServicesComponent/>
         <PortfolioComponent
             :portfolioOne="portfolioOne"
             :portfolioTwo="portfolioTwo"
@@ -19,6 +20,7 @@
 import HeaderComponent from './components/HeaderComponent.vue';
 import AboutComponent from "@/components/AboutComponent.vue";
 import PortfolioComponent from "@/components/PortfolioComponent.vue";
+import ServicesComponent from "@/components/ServicesComponent.vue";
 import logoImage from '@/assets/logo.png'; // Adjust this path to where your actual logo image is located
 import bgImage from '@/assets/bg.jpg'; // Adjust this path to where your actual background image is located
 import portfolioOne from '@/assets/portfolio/image1.jpeg';
@@ -31,7 +33,8 @@ export default {
     components: {
         HeaderComponent,
         AboutComponent,
-        PortfolioComponent
+        ServicesComponent,
+        PortfolioComponent,
     },
     data() {
         return {
