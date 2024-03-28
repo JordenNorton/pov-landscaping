@@ -1,47 +1,63 @@
 <template>
-    <section class="py-5 portfolio-container">
-        <v-container>
-            <v-row justify="center" class="mb-5">
-                <v-col cols="12" lg="6" xl="3" class="portfolio-header">
-                    <h2 class="portfolio-header-text">Our Work</h2>
-                </v-col>
-            </v-row>
-            <v-row justify="center">
-                <v-col cols="12" md="10" lg="8" xl="4" class="mt-4 carousel-container">
-                    <v-carousel class="mt-2 custom-carousel" hide-delimiter-background cycle interval="5000">
-                        <v-carousel-item
-                            v-for="(image, index) in images"
-                            :key="index"
-                            :src="image.src"
-                            cover
-                        >
-                        </v-carousel-item>
-                    </v-carousel>
-                    <v-btn rounded="xl" class="mx-3 mt-4 text-white custom-gradient-cta" dark>
-                        View Gallery - Coming Soon
-                    </v-btn>
-                </v-col>
-            </v-row>
-        </v-container>
-    </section>
-    <section class="socials-container">
-        <v-container>
-            <v-row justify="center" class="mb-5">
-                <v-col cols="12" class="socials">
-                    <h2 class="socials-text">Want to see more?</h2>
-                    <p class="socials-text-sub">Follow Us!</p>
-                    <div class="social-icons mt-3">
-                        <v-btn icon :href="facebookUrl" target="_blank" class="social-icon mr-5">
-                            <v-icon x-large>mdi-facebook</v-icon>
+    <div>
+        <!-- Portfolio Section -->
+        <section class="py-5 portfolio-container">
+            <v-container>
+                <v-row justify="center" class="mb-5">
+                    <v-col cols="12" lg="6" xl="3" class="portfolio-header">
+                        <h2 class="portfolio-header-text">Our Work</h2>
+                    </v-col>
+                </v-row>
+                <v-row justify="center">
+                    <v-col cols="12" md="10" lg="8" xl="4" class="mt-4 carousel-container">
+                        <v-carousel class="mt-2 custom-carousel" hide-delimiter-background cycle interval="5000">
+                            <v-carousel-item v-for="(image, index) in images" :key="index" :src="image.src" cover>
+                            </v-carousel-item>
+                        </v-carousel>
+                        <v-btn rounded="xl" class="mx-3 mt-4 custom-gradient-cta" disabled>
+                            <v-icon left>mdi-timer-sand</v-icon>
+                            View Gallery - Coming Soon
                         </v-btn>
-                        <v-btn icon :href="instagramUrl" target="_blank" class="social-icon">
-                            <v-icon x-large>mdi-instagram</v-icon>
+                    </v-col>
+                </v-row>
+            </v-container>
+        </section>
+        <v-divider class="my-5"/>
+        <!-- Socials Section -->
+        <section class="socials-container">
+            <v-container>
+                <v-row justify="center" class=""> <!-- Reduced margin -->
+                    <v-col cols="12" class="socials">
+                        <h2 class="socials-text">Want to see more?</h2>
+                        <p class="socials-text-sub">Follow Us!</p>
+                        <div class="social-icons mt-3">
+                            <v-btn icon :href="facebookUrl" target="_blank" class="social-icon mr-5">
+                                <v-icon x-large>mdi-facebook</v-icon>
+                            </v-btn>
+                            <v-btn icon :href="instagramUrl" target="_blank" class="social-icon">
+                                <v-icon x-large>mdi-instagram</v-icon>
+                            </v-btn>
+                        </div>
+                    </v-col>
+                </v-row>
+                <!-- Contact Buttons directly below socials with reduced gap -->
+                <v-row justify="center">
+                    <v-col cols="12" sm="6" class="socials">
+                        <!--                        <p class="socials-text-sub mb-5">OR</p>-->
+                        <v-btn class="email-btn mr-5" href="mailto:enquiries@povlandscapingltd.co.uk">
+                            <v-icon left size="22">mdi-email</v-icon>
+                            Email Us
                         </v-btn>
-                    </div>
-                </v-col>
-            </v-row>
-        </v-container>
-    </section>
+                        <v-btn class="call-btn ml-5" href="tel:07943 212694">
+                            <v-icon left size="22">mdi-phone</v-icon>
+                            Call Us
+                        </v-btn>
+
+                    </v-col>
+                </v-row>
+            </v-container>
+        </section>
+    </div>
 </template>
 
 <script>
@@ -93,6 +109,8 @@ export default {
 
 .socials-container {
     text-align: center;
+    margin-bottom: 0; /* Reduce or remove the bottom margin to decrease the gap */
+    padding-bottom: 1rem; /* Adjust padding for spacing directly above the contact buttons */
 }
 
 .socials {
@@ -124,19 +142,45 @@ export default {
     margin: 0 10px;
 }
 
+.email-btn, .call-btn {
+    padding: 10px 20px; /* Adjust padding for visual balance */
+    border-radius: 4px; /* Modern rounded corners */
+    font-size: 0.875rem; /* Ensures text is appropriately sized */
+    transition: background-color 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
+    display: inline-flex; /* Align icon and text */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    color: white; /* Text color */
+}
+
+.email-btn {
+    background: linear-gradient(135deg, rgba(102, 187, 106, 1) 0%, rgba(67, 160, 71, 1) 100%); /* Custom green gradient */
+}
+
+.call-btn {
+    background: linear-gradient(90deg, rgba(203, 185, 55, 1) 0%, rgba(209, 146, 9, 1) 100%);
+}
+
+.email-btn:hover, .call-btn:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Icons */
+.v-icon {
+    margin-right: 8px; /* Spacing between icon and text */
+}
 
 .custom-gradient-cta {
-    background: rgb(102, 187, 106);
-    background: linear-gradient(135deg, rgba(102, 187, 106, 1) 0%, rgba(67, 160, 71, 1) 100%);
-    border: none; /* Remove any default borders */
-    color: white; /* Ensure text color is white for high contrast */
+    background: rgb(200, 200, 200); /* A muted grey color */
+    color: rgba(255, 255, 255, 0.7); /* Dimmed white for text to imply unavailability */
+    cursor: not-allowed; /* Cursor to indicate the button is not clickable */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: all 0.3s ease; /* Smooth transition for effects */
 }
 
 .custom-gradient-cta:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-    transform: translateY(-2px); /* Slight lift effect on hover */
+    background: rgb(200, 200, 200); /* Maintain the same background on hover */
+    color: rgba(255, 255, 255, 0.7); /* Maintain text color on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Maintain shadow for consistency, no lifting effect */
 }
 
 
@@ -151,6 +195,10 @@ export default {
 
     .socials-text-sub {
         font-size: 1rem;
+    }
+
+    .contact-buttons-container .v-col {
+        max-width: 100%; /* Allow buttons to take full width on smaller screens */
     }
 }
 
