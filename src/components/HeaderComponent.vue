@@ -2,14 +2,15 @@
     <div class="header" :style="{ backgroundImage: `url(${backgroundImage})` }">
         <div class="overlay">
             <img :src="logo" alt="Logo" class="logo">
+            <div class="location-banner"><span>Essex</span> & <span>London</span></div>
             <div class="py-1">
-                <v-btn rounded="xl" class="mx-3 text-white custom-gradient"
-                       href="https://www.instagram.com/pov_landscape_ltd/" dark>Portfolio
-                </v-btn>
-                <v-btn rounded="xl" class="mx-3 text-white custom-gradient-cta" dark @click="toggleDialog">Get a Quote
-                </v-btn>
+                <div class="button-group">
+                    <v-btn class="left-button portfolio-btn" href="https://www.instagram.com/pov_landscape_ltd/" dark>
+                        Portfolio
+                    </v-btn>
+                    <v-btn class="right-button quote-btn" @click="toggleDialog" dark>Get a Quote</v-btn>
+                </div>
 
-                <!-- Dialog for Quote Options -->
                 <v-dialog v-model="showDialog" persistent max-width="400px" class="quote-dialog">
                     <v-card>
                         <v-card-title class="text-center">How to Reach Us</v-card-title>
@@ -24,7 +25,6 @@
                                     <v-icon left>mdi-phone</v-icon>
                                     {{ callButtonText }}
                                 </v-btn>
-                                <!-- Social Icons -->
                                 <div class="social-icons mt-3">
                                     <v-btn icon :href="'https://www.facebook.com/profile.php?id=61557010003110'"
                                            target="_blank">
@@ -104,7 +104,7 @@ export default {
 
 .logo {
     max-width: 500px; /* Adjust based on your logo's size */
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     animation: logo-appear 0.5s ease-out forwards;
     opacity: 0; /* Initial state for animation */
     transform: scale(0.95); /* Initial scale */
@@ -117,32 +117,6 @@ export default {
         transform: scale(1);
     }
 }
-
-.custom-gradient {
-    background: rgb(102, 187, 106);
-    background: linear-gradient(135deg, rgba(102, 187, 106, 1) 0%, rgba(67, 160, 71, 1) 100%);
-    border: none; /* Remove any default borders */
-    color: white; /* Ensure text color is white for high contrast */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: all 0.3s ease; /* Smooth transition for effects */
-}
-
-.custom-gradient:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-    transform: translateY(-2px); /* Slight lift effect on hover */
-}
-
-.custom-gradient-cta {
-    background: rgb(203, 185, 55);
-    background: linear-gradient(90deg, rgba(203, 185, 55, 1) 0%, rgba(209, 146, 9, 1) 100%);
-}
-
-.custom-gradient-cta:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-    transform: translateY(-2px); /* Slight lift effect on hover */
-}
-
-/* Adjustments for the dialog */
 
 .v-dialog .v-card {
     background-color: #fff; /* Ensuring the dialog background matches the theme */
@@ -194,16 +168,82 @@ export default {
     background: linear-gradient(90deg, rgba(203, 185, 55, 1) 0%, rgba(209, 146, 9, 1) 100%);
 }
 
+.location-banner {
+    animation: logo-appear 0.5s ease-out forwards;
+    transform: scale(0.95); /* Initial scale */
+    margin-bottom: 40px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.location-banner span {
+    color: #e1e2a0;
+}
+
+
+.button-group {
+    display: flex;
+    gap: 20px; /* Adjust based on layout needs */
+}
+
+/* Styles for the left button */
+.left-button {
+    border: 1px solid rgba(255, 255, 255, 0.5); /* White border with some transparency */
+    background-color: rgba(102, 187, 106, 0.4); /* Less transparent green background */
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 10px 25px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.left-button:hover {
+    background-color: rgba(102, 187, 106, 0.5); /* Slightly more opaque on hover for a soft interactive effect */
+    border-color: rgba(255, 255, 255, 0.75); /* Brighter border on hover */
+}
+
+/* Styles for the right button */
+.right-button {
+    border: 1px solid rgba(255, 255, 255, 0.5); /* White border with some transparency */
+    background-color: rgba(225, 226, 160, 0.4); /* Less transparent version of #e1e2a0 */
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 10px 25px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.right-button:hover {
+    background-color: rgba(225, 226, 160, 0.5); /* Slightly more opaque on hover for a soft interactive effect */
+    border-color: rgba(255, 255, 255, 0.75); /* Brighter border on hover */
+}
+
+
+.portfolio-btn:hover, .quote-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.75);
+}
+
+.quote-btn {
+    /* Additional style specific to the quote button, if needed */
+}
+
+
 @media (max-width: 768px) {
     .logo {
         max-width: 200px;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
 
     .v-dialog .contact-options .v-btn {
         font-size: 14px; /* Slightly smaller font size for compactness */
         padding: 0.5rem; /* Reduced padding for space efficiency */
     }
+
 }
 
 </style>
