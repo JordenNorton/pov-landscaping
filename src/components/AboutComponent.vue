@@ -9,15 +9,13 @@
                     </div>
                     <div class="mt-5 px-4 page-about">
                         <p class="mb-5 about-text">At POV Landscaping, we believe that your outdoor space is the canvas
-                            where
-                            nature
-                            reveals its true
-                            colors, and we are the artists who bring that vibrant vision to life. Our name, "POV,"
-                            reflects
-                            our
-                            dedication to providing a "Personal Outdoor Vision" that aligns perfectly with your dreams
-                            for a
-                            serene and beautiful landscape.</p>
+                            where nature reveals its true colors, and we are the artists who bring that vibrant vision
+                            to life. Our name, "POV," reflects our dedication to providing a "Personal Outdoor Vision"
+                            that aligns perfectly with your dreams for a serene and beautiful landscape. Proudly serving
+                            Essex and London, we are committed to transforming gardens into stunning outdoor retreats
+                            across these regions. With our expertise, your outdoor space will not just be a landscape
+                            but a sanctuary that resonates with elegance and tranquility.
+                        </p>
                     </div>
                 </v-col>
             </v-row>
