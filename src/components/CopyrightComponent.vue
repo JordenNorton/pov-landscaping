@@ -1,5 +1,5 @@
 <template>
-    <div class="copyright">
+    <div class="copyright my-5">
         &copy; {{ currentYear }} POV Landscaping Ltd. All rights reserved.
     </div>
 </template>
